@@ -38,7 +38,7 @@ export default {
 .pagination {
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
-  padding: 1.5rem;
+  padding: 2.1rem;
   font-size: 1.4rem;
 
   position: fixed;
