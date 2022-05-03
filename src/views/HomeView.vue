@@ -1,16 +1,17 @@
 <template>
   <div class="home">
-    <cards-list :cards="cards" />
+    <cards-list :cards="paginatedCards" />
+    <cards-pagination :pages="pages" />
   </div>
 </template>
 
 <script>
 import CardsList from '@/components/CardsList.vue';
-// @ is an alias to /src
-import { mapState, mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
+import CardsPagination from '@/components/CardsPagination.vue';
 
 export default {
-  components: { CardsList },
+  components: { CardsList, CardsPagination },
   name: 'HomeView',
   methods: {
     ...mapActions({
@@ -18,8 +19,10 @@ export default {
     }),
   },
   computed: {
-    ...mapState({
-      cards: 'cards',
+    ...mapGetters({
+      cards: 'getCards',
+      pages: 'getPages',
+      paginatedCards: 'getPaginatedCards',
     }),
   },
   mounted() {
@@ -27,3 +30,5 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped></style>
