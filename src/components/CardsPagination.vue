@@ -34,4 +34,29 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.pagination {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+  &__page {
+    transition: transform 0.2s;
+    transform: scale(1);
+
+    &--selected {
+      transform: scale(1.1);
+    }
+  }
+}
+</style>

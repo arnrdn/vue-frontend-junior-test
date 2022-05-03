@@ -8,15 +8,14 @@ export default new Vuex.Store({
   state: {
     cards: [],
     pageNumber: 1,
-    cardsPerPage: 5,
+    cardsPerPage: 6,
   },
   getters: {
     getCards(state) {
       return state.cards;
     },
     getPages(state) {
-      // будет показывать 5 карточек на страницу
-      return Math.ceil(state.cards.length / 5);
+      return Math.ceil(state.cards.length / state.cardsPerPage);
     },
     getPaginatedCards(state) {
       let from = (state.pageNumber - 1) * state.cardsPerPage;
